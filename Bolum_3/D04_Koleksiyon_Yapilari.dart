@@ -12,7 +12,9 @@ numaralar[0] diyerek.
 
 void main(List<String> args) {
   int sayi = 4;
-  List<int> sayilar = List.filled(5, 2, growable: false);
+  List<int> sayilar = List.filled(5, 2,
+      growable:
+          false); //sabit boyutlu dizilerde remove, removeAt metodlari calismaz
   sayilar[0] = 6; //0.index
   sayilar[1] = 65; //1.index
   sayilar[2] = 95;
