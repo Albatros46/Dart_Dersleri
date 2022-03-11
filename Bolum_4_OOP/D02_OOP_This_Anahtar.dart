@@ -28,4 +28,7 @@ class Araba {
     this.vites = vitesi;
     this.yakit = yakiti;
   }
+  /* Araba(this.modelYili, this.marka,this.vites,this.yakit) {
+    // bu sekilde de kullanilabilir.
+  } */
 }
