@@ -2,7 +2,7 @@
  * Sinif :  kendi veri türlerimiz veya soyut olan taslaklara denir. kendi icinde degiskenlere ve metodlara sahiptir.
  * Nesne : Olusturulan soyut ve taslak olan siniflardan üretilen orneklere denir.
  * Nesnelere sinifin sahip oldugu degerlere ulasmak icin kullandigimiz referanslardir.
- * 
+ *  Her nesne olusturuldugunda kurucu metod(constructor) calisir. Parametreli veya parametresiz olarak ikiye ayrilir
  */
 void main(List<String> args) {
   Ogrenci ogr1 = Ogrenci();
