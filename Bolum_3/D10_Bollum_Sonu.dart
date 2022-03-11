@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 void main(List<String> args) {
@@ -70,6 +71,31 @@ void main(List<String> args) {
   Set<int> SonSet = <int>{};
   for (var item in sonListe) {
     SonSet.add(item * item);
-  }// tekrar eden elemanlar Set lerde yazdirilmaz.
+  } // tekrar eden elemanlar Set lerde yazdirilmaz.
   print("Son Listenin Karesi:$SonSet");
+  // 5. Kullanicidan Ders Notlari istenecek bu sayilar bir listede tutulacak
+  //kullanici -1 e bastiginda notlarin ortalamasi ekrana yazdirilaca.
+  int notDegeri = 0;
+  List<int> girilenNotlar = <int>[];
+  do {
+    print("Lütfen notunuzu giriniz, cikis icin -1 :");
+    int.parse(
+        stdin.readLineSync()!); //null deger gelmeyecegi icin ! kullaniyoruz
+    if (notDegeri != -1) {
+      girilenNotlar.add(notDegeri);
+    }
+  } while (notDegeri == -1);
+  {
+    print("Kac tane not girildi ${girilenNotlar.length}");
+    double ort = ListeninOrtalamasi(girilenNotlar);
+    print("Notlarin Ortalamasi:$ort");
+  }
+}
+
+double ListeninOrtalamasi(List<int> liste) {
+  int toplam = 0;
+  for (var i = 0; i < liste.length; i++) {
+    toplam = toplam + liste[i];
+  }
+  return toplam / liste.length;
 }
