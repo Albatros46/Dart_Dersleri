@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main(List<String> args) {
   // 1. Sehirleri tutan bir liste olusturun, 4 tane sehir ekleyip sirayla ekrana yadirin.
   List<String> sehirler = List.filled(4, ""); // sabit uzunluklu liste
@@ -51,4 +53,23 @@ void main(List<String> args) {
   print("********");
   print(
       iller); // liste olarak goruntuleyecek. iller[0] index de belirtilebilir.
+  print("+++++++++++++++++++++++++++++++++++++++++");
+  // 4. 5 elemanli 2 farkli liste olusturun. Elemanlari 0-50 arasinda rastgele sekilde olustursun.
+  // Olusturulan elemanlar bir listeye aktarilacak ve son olarak da elemanlarin karesini tutan
+  //bir set yapisi olusturup ekrana yazdirilacak.
+  List<int> liste1 = List.filled(5, 0);
+  var liste2 = List.filled(5, 0);
+  List<int> sonListe = <int>[];
+  for (var i = 0; i < 5; i++) {
+    liste1[i] = Random().nextInt(50);
+    liste2[i] = Random().nextInt(50);
+  }
+  print("Liste 1:$liste1");
+  print("Liste 2:$liste2");
+  sonListe = [...liste1, ...liste2];
+  Set<int> SonSet = <int>{};
+  for (var item in sonListe) {
+    SonSet.add(item * item);
+  }// tekrar eden elemanlar Set lerde yazdirilmaz.
+  print("Son Listenin Karesi:$SonSet");
 }
