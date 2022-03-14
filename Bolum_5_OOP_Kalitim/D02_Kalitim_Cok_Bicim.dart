@@ -1,5 +1,6 @@
 /**Kalitim (inheritance) : Ana sinif olarak olusturdugumuz class in bir takim özelliklerinin 
  * child siniflara aktarilmasi kalitim(inheritance) dir. 
+ * Polymorfizm(cok bicimlik)
  * 
  * Metod overriding: üst siniftaki degisken veya metodlarin alt siniflar tarafindan 
  * degistirilmesine denir. 
@@ -24,12 +25,26 @@ void main(List<String> args) {
   tumUserler.add(user1); // normal user
   tumUserler.add(user2); // okuyucuUser
   tumUserler.add(user3); // admin user
+  print("Test Calisiyor............");
+  test(user3);
+  test(user2);
+  test(user1);
+}
+
+void test(User kullanici) {
+  // normalde girilen kullanici belli degil fakat main class da parametre olarak gelen kullanici ile giris yapan kullanici belli olacak
+
+  kullanici.girisYap(); //Polimorfizm (cok bicimlilik)
 }
 
 class User {
   //Parent class (ana sinif)
   String email = "";
   String password = "";
+
+  void girisYap() {
+    print("Kullanici Giris yapti.");
+  }
 }
 
 class NormalUser extends User {
