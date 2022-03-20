@@ -12,8 +12,8 @@ void main(List<String> args) {
   liste.forEach(
       geriDon); // forEach kendisi bir fonksiyon, ben kendi yazdigim fonksiyonu parametre olarak gonderdim
   print("------------------------");
-  forIc(liste, (int deger) {
-    print("Okunan :$deger");
+  forIc(liste, (int deger, int indexDeger) {
+    print("Okunan :$deger ve index degeri : $indexDeger");
   });
 }
 
@@ -26,6 +26,6 @@ void forIc(List<int> liste, Function callback) {
   for (var i = 0; i < liste.length; i++) {
     print("Deger :${liste[i]}");
     //veya
-    callback(liste[i]);
+    callback(liste[i], i);
   }
 }
